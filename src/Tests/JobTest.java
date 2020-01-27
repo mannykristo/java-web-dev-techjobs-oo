@@ -29,10 +29,9 @@ public class JobTest {
 
     @Test
     public void testSettingJobId() {
-        assertEquals(fakeJob, fakeJob1, 1);
+        assertFalse(fakeJob.getId() == fakeJob1.getId());
     };
 
-    private void assertEquals(Job fakeJob, Job fakeJob1, int i) {};
 
     @Test
     public void testJobConstructorSetsAllFields() {
@@ -48,16 +47,18 @@ public class JobTest {
         assertFalse(fakeJob.equals(fakeJob1));
     };
 
-   @Test
-   public String toString() {
-       String toStringTest = "\n" +
-               "ID: " + fakeJob4.getId() + "\n" +
-               "Name: " + fakeJob4.getName() + "\n" +
-               "Employer: " + fakeJob4.getEmployer() + "\n" +
-               "Location: " + fakeJob4.getLocation() + "\n" +
-               "Position Type: " + fakeJob4.getPositionType() + "\n" +
-               "Core Competency: " + fakeJob4.getCoreCompetency() + "\n";
-               return toStringTest;
+    @Test
+    public void testingSpaceBetweenJobElements() {
+        assertTrue(fakeJob4.toString().contains("Name: Product tester\n"));
+        assertTrue(fakeJob4.toString().contains("Employer: ACME\n"));
+        assertTrue(fakeJob4.toString().contains("Location: Desert\n"));
+        assertTrue(fakeJob4.toString().contains("PositionType: Quality control\n"));
+        assertTrue(fakeJob4.toString().contains("CoreCompetency: Persistence\n"));
+    };
+
+    @Test
+    public void testToSeeIfDataIsAvailable() {
+
     };
 
 };

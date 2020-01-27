@@ -1,5 +1,6 @@
 package org.launchcode.techjobs_oo;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class  Job {
@@ -26,6 +27,10 @@ public class  Job {
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
     }
+
+    //create an array to hold jobs, loop through them, and then store; if empty -> "Data Not Available"
+    ArrayList<Job> jobs = new ArrayList<>();
+    //for
 
     @Override
     public boolean equals(Object o) {
@@ -84,6 +89,9 @@ public class  Job {
         this.coreCompetency = coreCompetency;
     }
 
+    public boolean toString(String s) {
+        return true;
+    }
 
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
