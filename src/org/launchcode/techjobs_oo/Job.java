@@ -29,8 +29,7 @@ public class  Job {
     }
 
     //create an array to hold jobs, loop through them, and then store; if empty -> "Data Not Available"
-    ArrayList<Job> jobs = new ArrayList<>();
-    //for
+
 
     @Override
     public boolean equals(Object o) {
@@ -92,6 +91,7 @@ public class  Job {
     public boolean toString(String s) {
         return true;
     }
+
 
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the

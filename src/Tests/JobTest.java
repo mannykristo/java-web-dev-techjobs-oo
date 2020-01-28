@@ -56,9 +56,4 @@ public class JobTest {
         assertTrue(fakeJob4.toString().contains("CoreCompetency: Persistence\n"));
     };
 
-    @Test
-    public void testToSeeIfDataIsAvailable() {
-
-    };
-
 };
