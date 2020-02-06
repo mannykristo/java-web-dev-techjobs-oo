@@ -1,6 +1,5 @@
 package org.launchcode.techjobs_oo;
 
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class  Job {
@@ -29,7 +28,17 @@ public class  Job {
     }
 
     //create an array to hold jobs, loop through them, and then store; if empty -> "Data Not Available"
-
+    public String toString() {
+        String str = "";
+        str += "\n" + "ID: " + this.getId();
+        str += "\n" + "Name: " + this.getName()!="" ? "\n" + "Name: " + this.getName() : "Data is not available.";
+        str += "\n" + "Employer: " + this.employer.getValue()!="" ? "\n" + "Employer: " + this.employer.getValue() : "Data is not available.";
+        str += "\n" + "Location: " + this.location.getValue()!="" ? "\n" + "Location: " + this.location.getValue() : "Data is not available.";
+        str += "\n" + "PositionType: " + this.positionType.getValue()!="" ? "\n" + "PositionType: " + this.positionType.getValue() : "Data is not available.";
+        str += "\n" + "CoreCompetency: " + this.coreCompetency.getValue()!="" ? "\n" + "CoreCompetency: " + this.coreCompetency.getValue() : "Data is not available.";
+        final String str1 = str;
+        return str1 + "\n";
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -88,9 +97,7 @@ public class  Job {
         this.coreCompetency = coreCompetency;
     }
 
-    public boolean toString(String s) {
-        return true;
-    }
+
 
 
 
