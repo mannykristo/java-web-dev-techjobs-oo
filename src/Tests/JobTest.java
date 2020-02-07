@@ -7,23 +7,13 @@ import static org.junit.Assert.*;
 
 public class JobTest {
 
-   Job fakeJob = new Job();
-   Job fakeJob1 = new Job();
-   Job fakeJob2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+   private static Job fakeJob = new Job();
+   private static Job fakeJob1 = new Job();
+   private static Job fakeJob2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
-   Job fakeJob3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
-                new PositionType("Quality control"), new CoreCompetency("Persistence"));
-   Job fakeJob4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
+   private static Job fakeJob3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-    @Test
-    public void testJobObjects() {
-        fakeJob = new Job();
-        fakeJob1 = new Job();
-        fakeJob2 = new Job();
-        fakeJob3 = new Job();
-        fakeJob4 = new Job();
-    }
 
     @Test
     public void testSettingJobId() {
@@ -33,11 +23,11 @@ public class JobTest {
 
     @Test
     public void testJobConstructorSetsAllFields() {
-        assertTrue("Product tester".equals(fakeJob3.getName()));
-        assertTrue(fakeJob3.getEmployer() instanceof Employer);
-        assertTrue(fakeJob3.getLocation() instanceof Location);
-        assertTrue(fakeJob3.getPositionType() instanceof PositionType);
-        assertTrue(fakeJob3.getCoreCompetency() instanceof CoreCompetency);
+        assertTrue("Product tester".equals(fakeJob2.getName()));
+        assertTrue(fakeJob2.getEmployer() instanceof Employer);
+        assertTrue(fakeJob2.getLocation() instanceof Location);
+        assertTrue(fakeJob2.getPositionType() instanceof PositionType);
+        assertTrue(fakeJob2.getCoreCompetency() instanceof CoreCompetency);
     }
 
     @Test
@@ -47,8 +37,15 @@ public class JobTest {
 
     @Test
     public void testingSpaceBetweenJobElements() {
-        String test_string = "\nID: 10\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPositionType: Quality control\nCoreCompetency: Persistence\n";
-        String test_string2 = fakeJob4.toString();
+        String test_string = fakeJob3.toString();
+        assertTrue(test_string.startsWith("\n"));
+        assertTrue(test_string.endsWith("\n"));
+    }
+
+    @Test
+    public void testToMakeSureTheCorrectValuesMatchTheFieldsPrinted() {
+        String test_string = "\nID: 4\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPositionType: Quality control\nCoreCompetency: Persistence\n";
+        String test_string2 = fakeJob3.toString();
         assertEquals(test_string, test_string2);
     }
 
