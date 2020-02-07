@@ -2,6 +2,7 @@ package Tests;
 
 import org.junit.Test;
 import org.launchcode.techjobs_oo.*;
+
 import static org.junit.Assert.*;
 
 
@@ -13,13 +14,13 @@ public class JobTest {
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
    private static Job fakeJob3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
+//   private static Job fakeJob4 = new Job("", new Employer(""), new Location(""),
+//           new PositionType(""), new CoreCompetency(""));
 
-
-    @Test
+   @Test
     public void testSettingJobId() {
         assertFalse(fakeJob.getId() == fakeJob1.getId());
     }
-
 
     @Test
     public void testJobConstructorSetsAllFields() {
@@ -48,5 +49,14 @@ public class JobTest {
         String test_string2 = fakeJob3.toString();
         assertEquals(test_string, test_string2);
     }
+
+//    @Test
+//    public void testToSeeIfThereIsOnlyAnIDFieldAndNoOthersFieldsPresent() {
+//       String test_string = "\nID: 5\nName: Data is not available.\nEmployer: Data is not available.\nLocation: Data is not available.\nPositionType: Data is not available.\nCoreCompetency: Data is not available.\n";
+//       String test_string2 = fakeJob4.toString();
+//       assertEquals(test_string, test_string2);
+//    }
+
+
 
 }
